@@ -5,21 +5,26 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './components/main/main.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ListsComponent } from './components/lists/lists.component';
-import { ListComponent } from './components/list/list.component';
+
+import { TaskerModule } from './tasker/tasker.module';
+
+import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, ListsComponent, ListComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    SharedModule,
+    HomeModule,
     AppRoutingModule,
     DragDropModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TaskerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

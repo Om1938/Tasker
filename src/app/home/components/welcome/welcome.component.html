@@ -1,0 +1,13 @@
+<app-navbar appName="Dashboard"></app-navbar>
+<div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+  <div class="flex">
+    <welcome-card
+      [details]="card"
+      [routerLink]="[card.routerLink]"
+      *ngFor="let card of cards"
+      class="mx-2"
+    >
+      {{ card.description }}
+    </welcome-card>
+  </div>
+</div>

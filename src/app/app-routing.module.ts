@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListsComponent } from './components/lists/lists.component';
-import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListsComponent,
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'tasker',
+    loadChildren: () =>
+      import('./tasker/tasker.module').then((m) => m.TaskerModule),
+  },
+  {
+    path: 'pixels',
+    loadChildren: () =>
+      import('./pixels/pixels.module').then((m) => m.PixelsModule),
   },
 ];
 
